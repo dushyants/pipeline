@@ -3,17 +3,17 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "build section"
+                echo "build section in fb"
             }
         }
         stage('Test'){
             steps{
-                echo "test section"
+                echo "test section in fb"
             }
         }
         stage('Deploy'){
             steps{
-                echo "Deploy section"
+                echo "Deploy sectionin Fb"
             }
 
         }
