@@ -1,29 +1,11 @@
-pipeline{
-    agent any
-    stages{
-        stage('Build'){
-            steps{
-                echo "build section"
+pipeline {
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
             }
-        }
-        stage('Test'){
-            steps{
-                sh 'PWD'
-                echo "test section"
-            }
-        }
-        stage('Deploy'){
-            steps{
-                when {
-                    expression {
-                        currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
-                echo "Deploy section"
-            }
-
         }
     }
-
-
 }
